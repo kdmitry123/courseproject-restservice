@@ -1,8 +1,8 @@
 package org.example.dto;
 
 
-import org.example.pojo.Role;
 import lombok.*;
+import org.example.pojo.Role;
 
 import java.util.Set;
 

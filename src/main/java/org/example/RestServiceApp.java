@@ -8,6 +8,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class RestServiceApp {
     public static void main(String[] args) {
-        SpringApplication.run(org.example.RestServiceApp.class, args);
+        SpringApplication.run(RestServiceApp.class, args);
     }
 }
