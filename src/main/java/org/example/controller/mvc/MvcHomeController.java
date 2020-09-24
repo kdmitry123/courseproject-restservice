@@ -8,7 +8,7 @@ public class MvcHomeController {
 
     @GetMapping("/")
     public String showHomePage() {
-        return "homePage.html";
+        return "homePage";
     }
 
 
