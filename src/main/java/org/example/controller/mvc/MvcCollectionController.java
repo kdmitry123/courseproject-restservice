@@ -1,17 +1,14 @@
 package org.example.controller.mvc;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class MvcCollectionController {
 
-    @GetMapping("/")
-    public String showHomePage() {
-        return "homePage";
+    @GetMapping("/addcollection")
+    public String addCollection(){
+        return "addCollection";
     }
-
-
 
 }

@@ -5,9 +5,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-public class RegisterController {
+public class MvcUserController {
+
     @GetMapping("/register")
     public String showRegistrationPage(){
         return "registerUser";
+    }
+
+    @GetMapping("/getallusers")
+    public String getUsers(){
+        return "allUsers";
     }
 }

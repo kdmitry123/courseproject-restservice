@@ -2,7 +2,10 @@ var allUsers = Vue.resource('/users/getall');
 
 Vue.component('user-row', {
     props: ['user'],
-    template: '<div>{{ user.firstName }}' + ' '+ '{{ user.secondName }}' + ' '+ '{{ user.email }}' + ' '+ '{{ user.role }}</div>'
+    template: '<div> <hr>' +
+        '<h5><u>{{ user.firstName }}' + ' ' + '{{ user.secondName }}</u></h5><br>' +
+        '<label>User email:</label>'+ ' ' + '{{ user.email }}<br>' +
+        '<label>User roles:</label> '+ ' ' + '{{ user.role }}<br><hr></div>'
 });
 
 Vue.component('user-list', {

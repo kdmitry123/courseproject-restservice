@@ -24,9 +24,11 @@ Vue.component('user-form', {
         '</fieldset><br>' +
         '<input type="button" value="Save user" @click="adduser" />' +
         '</div>',
+
     methods: {
         adduser: function () {
             var roles = [];
+
             var chbox1 = document.getElementById('role1');
             var chbox2 = document.getElementById('role2');
             if (chbox1.checked){
