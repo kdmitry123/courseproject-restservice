@@ -68,6 +68,31 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId></groupId>
+                <artifactId></artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>4.0.0</version>
+                <executions>
+                    <execution>
+                        <id>create_database</id>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <changeLogFile>src/main/resources/changeLog.xml</changeLogFile>
+                            <url>jdbc:mysql://localhost:3306/courseproject?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</url>
+                            <username>root</username>
+                            <password>root</password>
+                            <driver>com.mysql.cj.jdbc.Driver</driver>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
