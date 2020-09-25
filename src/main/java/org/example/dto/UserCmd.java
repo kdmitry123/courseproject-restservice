@@ -12,8 +12,8 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class UserCmd {
-    private String firstName;
-    private String secondName;
+    private String firstname;
+    private String secondname;
     private String email;
     private Set<Role> role;
 }

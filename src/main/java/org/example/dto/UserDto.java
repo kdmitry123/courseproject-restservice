@@ -11,8 +11,8 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class UserDto {
-    private String firstName;
-    private String secondName;
+    private String firstname;
+    private String secondname;
     private String email;
     private String password;
     private Set<Role> role;

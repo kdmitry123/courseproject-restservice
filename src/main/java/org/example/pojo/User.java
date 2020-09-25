@@ -19,9 +19,9 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
 
-    private String firstName;
+    private String firstname;
 
-    private String secondName;
+    private String secondname;
 
     @Id
     private String email;
@@ -36,11 +36,11 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Collection> collectionList;
 
-    public User(String firstName, String secondName, String email, String password, Set<Role> role, List<Collection> collectionList) {
+    public User(String firstname, String secondname, String email, String password, Set<Role> role, List<Collection> collectionList) {
         this.password = password;
         this.email = email;
-        this.firstName = firstName;
-        this.secondName = secondName;
+        this.firstname = firstname;
+        this.secondname = secondname;
         this.role = role;
         this.collectionList = collectionList;
     }
