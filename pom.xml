@@ -65,12 +65,16 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
+                <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>${maven.compiler.target}</source>
-                    <target>${maven.compiler.target}</target>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                    <jarName>restservice</jarName>
+                    <attachClasses>true</attachClasses>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
         </plugins>
