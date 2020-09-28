@@ -5,6 +5,7 @@ import org.example.dto.UserDto;
 import org.example.pojo.User;
 import org.example.repo.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -16,13 +17,19 @@ public class UserServices {
     @Autowired
     UserRepository userRepository;
 
+
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
+
     public void saveUser(UserDto userDto){
         if(!userRepository.findByEmail(userDto.getEmail()).isPresent()) {
             User user = new User();
             user.setFirstName(userDto.getFirstName());
             user.setSecondName(userDto.getSecondName());
             user.setEmail(userDto.getEmail());
-            user.setPassword(userDto.getPassword());
+            user.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
             user.setRole(userDto.getRole());
             userRepository.save(user);
         }
@@ -60,7 +67,7 @@ public class UserServices {
 
     public void updateUserPassword(String email, String password){
         User userDB = userRepository.findByEmail(email).get();
-        userDB.setPassword(password);
+        userDB.setPassword(bCryptPasswordEncoder.encode(password));
         userDB.setFirstName(userDB.getFirstName());
         userDB.setSecondName(userDB.getSecondName());
         userDB.setEmail(userDB.getEmail());
